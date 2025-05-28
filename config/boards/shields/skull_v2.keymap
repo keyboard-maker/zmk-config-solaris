@@ -1,0 +1,47 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+/{
+        keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
+            // |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
+            // | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | LAYER 1 | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
+            //                     | GUI  | DEL  | RET  |  SPACE  |   ESC   |  |   RET   |  SPACE  | TAB  | BSPC  | R-ALT |
+            bindings = <
+            &kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                  
+            &kp TAB   &kp A &kp S &kp D &kp F &kp G                                                 
+            &kp LSHFT &kp Z &kp X &kp C &kp V &kp B  &kp SPACE  &mo1     
+                                  &kp LGUI &kp DEL &kp RET       &kp ESC       
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+        layer_1 {
+            // ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
+            // │BTC│BT1│BT2│BT3│BT4│BT5│OUT│   │   │   │   │   │   │ BTCLR │
+            // ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
+            // │  ~  │   │   │   │   │   │   │   │   │   │   │   │   │     │
+            // ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤
+            // │      │   │   │   │   │   │   │   │   │   │   │   │        │
+            // ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴────────┤
+            // │        │   │   │   │   │   │   │   │   │   │   │          │
+            // ├────┬───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤
+            // │    │    │    │                        │    │    │    │    │
+            // └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
+
+            bindings = <
+                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &out OUT_TOG &trans &trans &trans &trans &trans &trans &bt BT_CLR
+                &kp GRAVE  &trans       &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans &trans
+                &trans     &trans       &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans &trans
+                &trans     &trans       &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans &trans
+                &trans     &trans       &trans                    &trans                                       &trans &trans &trans &trans &trans
+            >;
+        };
+        
+    };
+};
