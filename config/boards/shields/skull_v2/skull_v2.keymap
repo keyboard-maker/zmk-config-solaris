@@ -10,9 +10,9 @@
         default_layer {
             bindings = <
                 &kp ESC   &kp Q &kp W &kp E &kp R &kp T
-                &kp TAB   &mt N1 A &mt N2 S &mt N3 D &mt N4 F &mt N5 G
-                &kp LSHFT &kp Z &kp X &kp C &kp V &kp B           &mo 1
-                          &kp LGUI &kp DEL &kp RET      &kp SPACE &kp ESC
+                &kp TAB   &kp A &kp S &kp D &kp F &kp G
+                &kp LSHFT &kp Z &kp X &kp C &kp V &kp B           &kp ESC
+                          &kp LGUI &kp DEL &kp RET      &kp SPACE &lt 1 DOT
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
@@ -20,9 +20,9 @@
         layer_1 {
             bindings = <
                 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
-                &out OUT_TOG &kp GRAVE &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans          &trans
-                          &trans &trans &trans      &trans &trans
+                &out OUT_TOG &kp N1 &kp N2 &kp N3 &kp N4 &kp N5
+                &trans &trans &trans &trans &trans &trans &trans
+                         &trans &trans &trans &trans &trans
             >;
         };
     };
